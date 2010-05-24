@@ -1,0 +1,113 @@
+# Translation of the WordPress plugin   by .
+# Copyright (C) 2010
+# This file is distributed under the same license as the  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rsscampaign\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/rss-campaign\n"
+"POT-Creation-Date: 2010-05-24 14:23+0000\n"
+"PO-Revision-Date: 2010-05-24 16:53+0100\n"
+"Last-Translator: Sebastian Thiele <translate.20.seat@xoxy.net>\n"
+"Language-Team: Sebastian Thiele <language.20.sebat@xoxy.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: campaign.php:49
+msgid "Campaign Option Page"
+msgstr "Kampagnen Einstellseite"
+
+#: campaign.php:76
+msgid "Options for RSS"
+msgstr "Einstellungen für RSS"
+
+#: campaign.php:78
+#: campaign.php:122
+msgid "Piwik Options"
+msgstr "Piwik Einstellungen"
+
+#: campaign.php:81
+#: campaign.php:101
+#: campaign.php:125
+#: campaign.php:145
+msgid "Campaign Name"
+msgstr "Kampagnen Name"
+
+#: campaign.php:85
+#: campaign.php:129
+msgid "Keyword"
+msgstr "Schlagwort"
+
+#: campaign.php:90
+#: campaign.php:134
+msgid "Google Analytics Options"
+msgstr "Google Analytics Einstellungen"
+
+#: campaign.php:93
+#: campaign.php:137
+msgid "Campaign Source"
+msgstr "Kampagnen Quelle"
+
+#: campaign.php:94
+#: campaign.php:138
+msgid "referrer: google, citysearch, newsletter4"
+msgstr "Quelle: Google, Citysearch, Newsletter4"
+
+#: campaign.php:97
+#: campaign.php:141
+msgid "Campaign Medium"
+msgstr "Kampagnen Medium"
+
+#: campaign.php:98
+#: campaign.php:142
+msgid "marketing medium: cpc, banner, email"
+msgstr "Marketing Medium: cpc, banner, email"
+
+#: campaign.php:102
+#: campaign.php:146
+msgid "product, promo code, or slogan"
+msgstr "Produkt, Promo Code, Slogan"
+
+#: campaign.php:107
+#: campaign.php:151
+msgid "Example URL"
+msgstr "Beispiel URL"
+
+#: campaign.php:115
+msgid "Options for Twitter"
+msgstr "Einstellungen für Twitter"
+
+#: campaign.php:119
+msgid "Enable Campaign for Twitter"
+msgstr "Aktiviere kampagnen für Twitter"
+
+#: campaign.php:119
+msgid "No auto publishing"
+msgstr "Keine Autoveröffentlichung"
+
+#: campaign.php:162
+msgid "Save"
+msgstr "Speichern"
+
+#: campaign.php:174
+#, php-format
+msgid "Klick <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter."
+msgstr "Klicke <a href=\"%s\" target=\"_blank\">hier</a> um den Post bei Twitter zu veröffentlichen."
+
+#: campaign.php:176
+msgid "Your Campain Link is:"
+msgstr "Dein Kampagnenlink ist:"
+
+#: campaign.php:181
+msgid "Wait for Post publishing"
+msgstr "Warte auf die Postveröffentlichung"
+
+#: campaign.php:187
+msgid "Twitter with Campaign"
+msgstr "Twitter mit Kampagne"
+

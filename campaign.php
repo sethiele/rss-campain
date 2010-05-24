@@ -4,7 +4,7 @@ Plugin Name: Campaign
 Plugin URI: http://sebastian.thiele.me
 Description: This Plugin adds Campaign Infos to the RSS URL to tracking in Google Analytics or Piwik
 Author: Sebastian Thiele
-Version: 0.2
+Version: 1.1
 Author URI: http://sebastian.thiele.me
 */
 
@@ -91,15 +91,15 @@ function rss_campaign_admin_show() {
 				<table>
 					<tr>
 						<td class="rssc-name"><?php _e('Campaign Source', 'rsscampaign')?></td>
-						<td class="rssc-value"><input type="text" name="rssc-rss-utm_source" value="<?php echo urldecode($rsscOptions['rssc-rss-utm_source']);?>" /> <?php _e('(referrer: google, citysearch, newsletter4)', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-rss-utm_source" value="<?php echo urldecode($rsscOptions['rssc-rss-utm_source']);?>" /> (<?php _e('referrer: google, citysearch, newsletter4', 'rsscampaign')?>)</td>
 					</tr>
 					<tr>
 						<td class="rssc-name"><?php _e('Campaign Medium', 'rsscampaign')?></td>
-						<td class="rssc-value"><input type="text" name="rssc-rss-utm_medium" value="<?php echo urldecode($rsscOptions['rssc-rss-utm_medium']);?>" />  <?php _e('(marketing medium: cpc, banner, email)', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-rss-utm_medium" value="<?php echo urldecode($rsscOptions['rssc-rss-utm_medium']);?>" />  (<?php _e('marketing medium: cpc, banner, email', 'rsscampaign')?>)</td>
 					</tr>
 					<tr>
 						<td class="rssc-name"><?php _e('Campaign Name', 'rsscampaign')?></td>
-						<td class="rssc-value"><input type="text" name="rssc-rss-utm_campaign" value="<?php echo urldecode($rsscOptions['rssc-rss-utm_campaign']);?>" />  <?php _e('(product, promo code, or slogan)', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-rss-utm_campaign" value="<?php echo urldecode($rsscOptions['rssc-rss-utm_campaign']);?>" />  (<?php _e('product, promo code, or slogan', 'rsscampaign')?>)</td>
 					</tr>
 				</table>
 				
@@ -135,21 +135,21 @@ function rss_campaign_admin_show() {
 				<table>
 					<tr>
 						<td class="rssc-name"><?php _e('Campaign Source', 'rsscampaign')?></td>
-						<td class="rssc-value"><input type="text" name="rssc-twitter-utm_source" value="<?php echo urldecode($rsscOptions['rssc-twitter-utm_source']);?>" /> <?php _e('(referrer: google, citysearch, newsletter4)', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-twitter-utm_source" value="<?php echo urldecode($rsscOptions['rssc-twitter-utm_source']);?>" /> (<?php _e('referrer: google, citysearch, newsletter4', 'rsscampaign')?>)</td>
 					</tr>
 					<tr>
 						<td class="rssc-name"><?php _e('Campaign Medium', 'rsscampaign')?></td>
-						<td class="rssc-value"><input type="text" name="rssc-twitter-utm_medium" value="<?php echo urldecode($rsscOptions['rssc-twitter-utm_medium']);?>" />  <?php _e('(marketing medium: cpc, banner, email)', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-twitter-utm_medium" value="<?php echo urldecode($rsscOptions['rssc-twitter-utm_medium']);?>" />  (<?php _e('marketing medium: cpc, banner, email', 'rsscampaign')?>)</td>
 					</tr>
 					<tr>
 						<td class="rssc-name"><?php _e('Campaign Name', 'rsscampaign')?></td>
-						<td class="rssc-value"><input type="text" name="rssc-twitter-utm_campaign" value="<?php echo urldecode($rsscOptions['rssc-twitter-utm_campaign']);?>" />  <?php _e('(product, promo code, or slogan)', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-twitter-utm_campaign" value="<?php echo urldecode($rsscOptions['rssc-twitter-utm_campaign']);?>" />  (<?php _e('product, promo code, or slogan', 'rsscampaign')?>)</td>
 					</tr>
 				</table>
 				
 				<div id="rssc-example">
 					<h3 style=""><?php _e('Example URL', 'rsscampaign')?></h3>
-					RSS: <?php echo rssc_helper_buildParam(get_bloginfo('wpurl'), 'twitter'); ?>
+					Twitter: <?php echo rssc_helper_buildParam(get_bloginfo('wpurl'), 'twitter'); ?>
 				</div>
 				
 			</div>
@@ -194,6 +194,7 @@ add_action(	'admin_menu', 'rss_campaign_admin');
 if($rsscOptions['rssc-twitter-enable']) add_action('admin_init', 'post_rssc_meta');
 
 $plugindir = basename(dirname(__FILE__));
+load_plugin_textdomain( 'rsscampaign', 'wp-content/plugins/' . $plugindir.'/lang', false );
 if(is_admin() && ($_GET['page'] == 'rss-campaign')) {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('rssc', WP_CONTENT_URL .'/plugins/'. $plugindir. '/js/rssc.js',  array('jquery'));

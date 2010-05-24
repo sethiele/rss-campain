@@ -3,7 +3,7 @@ Contributors: sebat
 Tags: Piwik, Google Analytics, Google, Campaign
 Requires at least: 2.0
 Tested up to: 2.9.2
-Stable tag: 1.0
+Stable tag: 1.1
 Plugin Name: RSS Campaign
 
 
@@ -20,6 +20,10 @@ This Plugin adds the option to track your RSS reader or Twitter clicks by using 
 1. Go to the Option Menu and change your Options
 
 == Changelog ==
+= 1.1 =
+* Adding Language Support
+* Some Bugfixing
+
 = 1.0 =
 * Adding Twitter URL to the POST URL
 * Some Code optimizing
