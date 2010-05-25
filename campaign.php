@@ -204,7 +204,7 @@ function rss_campaign_admin_show() {
 			</p>
 				
 		</form>
-		<a href='http://www.pledgie.com/campaigns/10841'><img alt='Click here to lend your support to: Open Source by Sebastian and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/10841.png?skin_name=chrome' border='0' style="float:left; padding-right: 5px" /></a>
+		<a href='http://www.pledgie.com/campaigns/10886'><img alt='Click here to lend your support to: Open Source by Sebastian and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/10841.png?skin_name=chrome' border='0' style="float:left; padding-right: 5px" /></a>
 		<?php printf(__('The Source Code is open at <a href="%s">github</a>', 'rsscampaign'), "http://github.com/sethiele/rss-campain"); ?> | 
 		<?php printf(__('Feature request/ bugreport  at <a href="%s">github</a>', 'rsscampaign'), 'http://github.com/sethiele/rss-campain/issues'); ?> <br>
 		<?php printf(__('<a href="%s">Project Page</a>', 'rsscampaign'), "http://sebastian.thiele.me/projekte/wordpress-plugin-campaign?piwik_campaign=Plugins&piwik_kwd=RSS-Campaign"); ?> |

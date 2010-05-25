@@ -5,9 +5,10 @@ Requires at least: 2.0
 Tested up to: 2.9.2
 Stable tag: 1.2
 Plugin Name: RSS Campaign
+Donate Link: http://pledgie.com/campaigns/10886
 
 
-This Plugin adds Campaign Infos to the RSS URL an a option für a twitterable URL to tracking in Google Analytics or Piwik
+This Plugin adds Campaign Infos to the RSS URL an a option for a twitterable URL to tracking in Google Analytics or Piwik
 
 == Description ==
 
