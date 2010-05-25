@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rsscampaign\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/rss-campaign\n"
-"POT-Creation-Date: 2010-05-24 14:23+0000\n"
-"PO-Revision-Date: 2010-05-24 16:54+0100\n"
+"POT-Creation-Date: 2010-05-25 19:45+0000\n"
+"PO-Revision-Date: 2010-05-25 21:58+0100\n"
 "Last-Translator: Sebastian Thiele <translate.20.seat@xoxy.net>\n"
 "Language-Team: Sebastian Thiele <translate.20.sebat@xoxy.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,96 +18,156 @@ msgstr ""
 "X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: campaign.php:49
+#: campaign.php:53
 msgid "Campaign Option Page"
 msgstr "Campaign Option Page"
 
-#: campaign.php:76
+#: campaign.php:86
 msgid "Options for RSS"
 msgstr "Options for RSS"
 
-#: campaign.php:78
-#: campaign.php:122
+#: campaign.php:88
+#: campaign.php:132
 msgid "Piwik Options"
 msgstr "Piwik Options"
 
-#: campaign.php:81
-#: campaign.php:101
-#: campaign.php:125
-#: campaign.php:145
+#: campaign.php:91
+#: campaign.php:111
+#: campaign.php:135
+#: campaign.php:155
 msgid "Campaign Name"
 msgstr "Campaign Name"
 
-#: campaign.php:85
-#: campaign.php:129
+#: campaign.php:95
+#: campaign.php:139
 msgid "Keyword"
 msgstr "Keyword"
 
-#: campaign.php:90
-#: campaign.php:134
+#: campaign.php:100
+#: campaign.php:144
 msgid "Google Analytics Options"
 msgstr "Google Analytics Options"
 
-#: campaign.php:93
-#: campaign.php:137
+#: campaign.php:103
+#: campaign.php:147
 msgid "Campaign Source"
 msgstr "Campaign Source"
 
-#: campaign.php:94
-#: campaign.php:138
+#: campaign.php:104
+#: campaign.php:148
 msgid "referrer: google, citysearch, newsletter4"
 msgstr "referrer: google, citysearch, newsletter4"
 
-#: campaign.php:97
-#: campaign.php:141
+#: campaign.php:107
+#: campaign.php:151
 msgid "Campaign Medium"
 msgstr "Campaign Medium"
 
-#: campaign.php:98
-#: campaign.php:142
+#: campaign.php:108
+#: campaign.php:152
 msgid "marketing medium: cpc, banner, email"
 msgstr "marketing medium: cpc, banner, email"
 
-#: campaign.php:102
-#: campaign.php:146
+#: campaign.php:112
+#: campaign.php:156
 msgid "product, promo code, or slogan"
 msgstr "product, promo code, or slogan"
 
-#: campaign.php:107
-#: campaign.php:151
+#: campaign.php:117
+#: campaign.php:161
 msgid "Example URL"
 msgstr "Example URL"
 
-#: campaign.php:115
+#: campaign.php:125
 msgid "Options for Twitter"
 msgstr "Options for Twitter"
 
-#: campaign.php:119
+#: campaign.php:129
 msgid "Enable Campaign for Twitter"
 msgstr "Enable Campaign for Twitter"
 
-#: campaign.php:119
+#: campaign.php:129
 msgid "No auto publishing"
 msgstr "No auto publishing"
 
-#: campaign.php:162
+#: campaign.php:169
+msgid "URL shortener"
+msgstr "URL shortener"
+
+#: campaign.php:171
+msgid "Up to now only Bit.ly is supportet."
+msgstr "Up to now only Bit.ly is supportet."
+
+#: campaign.php:175
+msgid "Bit.ly Username"
+msgstr "Bit.ly Username"
+
+#: campaign.php:179
+msgid "Bit.ly ApiKey"
+msgstr "Bit.ly ApiKey"
+
+#: campaign.php:187
+msgid "Placeholder"
+msgstr "Placeholder"
+
+#: campaign.php:189
+msgid "The following placeholder can be added to every value and will replaced automatically."
+msgstr "The following placeholder can be added to every value and will replaced automatically."
+
+#: campaign.php:191
+msgid "Adds the post id to the campaign"
+msgstr "Adds the post id to the campaign"
+
+#: campaign.php:192
+msgid "Adds the posttitle to the campaign"
+msgstr "Adds the posttitle to the campaign"
+
+#: campaign.php:193
+msgid "More comming soon."
+msgstr "More comming soon."
+
+#: campaign.php:203
 msgid "Save"
 msgstr "Save"
 
-#: campaign.php:174
+#: campaign.php:208
 #, php-format
-msgid "Klick <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter."
-msgstr "Klick <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter."
+msgid "The Source Code is open at <a href=\"%s\">github</a>"
+msgstr "The Source Code is open at <a href=\"%s\">github</a>"
 
-#: campaign.php:176
+#: campaign.php:209
+#, php-format
+msgid "Feature request/ bugreport  at <a href=\"%s\">github</a>"
+msgstr "Feature request/ bugreport  at <a href=\"%s\">github</a>"
+
+#: campaign.php:210
+#, php-format
+msgid "<a href=\"%s\">Project Page</a>"
+msgstr "<a href=\"%s\">Project Page</a>"
+
+#: campaign.php:211
+#, php-format
+msgid "<a href=\"%s\">Author Page</a>"
+msgstr "<a href=\"%s\">Developer Page</a>"
+
+#: campaign.php:235
+#, php-format
+msgid "Click <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter."
+msgstr "Klick <a href=\"%s\" target=\"_blank\">here</a> to publish your post at Twitter."
+
+#: campaign.php:237
 msgid "Your Campain Link is:"
 msgstr "Your Campain Link is:"
 
-#: campaign.php:181
+#: campaign.php:237
+msgid "Shorten this Link"
+msgstr "Shorten this Link"
+
+#: campaign.php:242
 msgid "Wait for Post publishing"
 msgstr "Wait for Post publishing"
 
-#: campaign.php:187
+#: campaign.php:248
 msgid "Twitter with Campaign"
 msgstr "Twitter with Campaign"
 

@@ -4,11 +4,12 @@ Plugin Name: Campaign
 Plugin URI: http://sebastian.thiele.me
 Description: This Plugin adds Campaign Infos to the RSS URL to tracking in Google Analytics or Piwik
 Author: Sebastian Thiele
-Version: 1.1
+Version: 1.2
 Author URI: http://sebastian.thiele.me
 */
 
 function rssc_helper_buildParam($url, $source){
+  global $post;
 	$urlelement = parse_url($url);
 	$rsscOptions = get_option('rssc');
 	if($rsscOptions['rssc-'.$source.'-piwik_campaign'])	$attr[] = "piwik_campaign="	.urlencode($rsscOptions['rssc-'.$source.'-piwik_campaign']);
@@ -16,6 +17,8 @@ function rssc_helper_buildParam($url, $source){
 	if($rsscOptions['rssc-'.$source.'-utm_source']) 		$attr[] = "utm_source="			.urlencode($rsscOptions['rssc-'.$source.'-utm_source']);
 	if($rsscOptions['rssc-'.$source.'-utm_medium']) 		$attr[] = "utm_medium="			.urlencode($rsscOptions['rssc-'.$source.'-utm_medium']);
 	if($rsscOptions['rssc-'.$source.'-utm_campaign']) 	$attr[] = "utm_campaign="		.urlencode($rsscOptions['rssc-'.$source.'-utm_campaign']);
+	$attr = str_replace("%25POSTID%25", $post->ID, $attr);
+	$attr = str_replace("%25POSTTITLE%25", urlencode($post->post_title), $attr);
 	$ret .= $url;
 	if($attr && !$urlelement[query]) $ret .= "?";
 	elseif($attr)
@@ -32,6 +35,7 @@ function rssc_helper_buildParam($url, $source){
 }
 
 function rss_campaign_post_link($content){
+  global $post;
 	if(is_feed()){
 		return rssc_helper_buildParam($content, "rss");
 	} else {
@@ -61,13 +65,19 @@ function rss_campaign_admin_show() {
 					"rssc-twitter-utm_source" 		=> $_POST['rssc-twitter-utm_source'],
 					"rssc-twitter-utm_medium" 		=> $_POST['rssc-twitter-utm_medium'],
 					"rssc-twitter-utm_campaign" 	=> $_POST['rssc-twitter-utm_campaign'],
-					"rssc-twitter-enable"					=> $_POST['rssc-twitter-enable']
+					"rssc-twitter-enable"					=> $_POST['rssc-twitter-enable'],
+					"rssc-bitly-user"             => $_POST['rssc-bitly-user'],
+					"rssc-bitly-api"              => $_POST['rssc-bitly-api']
 				);
 				update_option('rssc', $rsscOptions);
 			}
 			
 			
 			$rsscOptions = get_option('rssc');
+			
+			global $post;
+			$post->ID = "POSTID";
+			$post->post_title = "POSTTITLE";
 		?>
 		
 		<form method="post" action="">
@@ -113,7 +123,7 @@ function rss_campaign_admin_show() {
 			<br>
 			
 			<h3 class="rssc-head" id="rssc-head-twitter"><?php _e('Options for Twitter', 'rsscampaign')?></h3>
-			<div class="rssc-optionen" id="rssc-twitter-optionen">			
+			<div class="rssc-optionen" id="rssc-twitter-optionen">	
 				
 				<p>
 					<?php _e('Enable Campaign for Twitter', 'rsscampaign')?> <input type="checkbox" name="rssc-twitter-enable" value="checked" <?php echo $rsscOptions['rssc-twitter-enable']; ?>> (<?php _e('No auto publishing', 'rsscampaign')?>)
@@ -154,6 +164,37 @@ function rss_campaign_admin_show() {
 				
 			</div>
 			
+			<br>
+			
+			<h3 class="rssc-head" id="rssc-head-shorter"><?php _e('URL shortener', 'rsscampaign')?></h3>
+			<div class="rssc-optionen" id="rssc-shorter-optionen">
+			  <?php _e('Up to now only Bit.ly is supportet.', 'rsscampaign')?><br><br>
+			  
+			  <table>
+					<tr>
+						<td class="rssc-name"><?php _e('Bit.ly Username', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-bitly-user" value="<?php echo urldecode($rsscOptions['rssc-bitly-user']);?>" /></td>
+					</tr>
+					<tr>
+						<td class="rssc-name"><?php _e('Bit.ly ApiKey', 'rsscampaign')?></td>
+						<td class="rssc-value"><input type="text" name="rssc-bitly-api" value="<?php echo urldecode($rsscOptions['rssc-bitly-api']);?>" /></td>
+					</tr>
+				</table>
+			</div>
+			
+			<br>
+			
+			<h3 class="rssc-head" id="rssc-head-placeholder"><?php _e('Placeholder', 'rsscampaign')?></h3>
+			<div class="rssc-optionen" id="rssc-placeholder-optionen">
+			  <?php _e('The following placeholder can be added to every value and will replaced automatically.', 'rsscampaign')?><br><br>
+			  <ul>
+			    <li><b>%POSTID%</b> - <?php _e('Adds the post id to the campaign', 'rsscampaign'); ?></li>
+			    <li><b>%POSTTITLE%</b> - <?php _e('Adds the posttitle to the campaign', 'rsscampaign'); ?></li>
+			    <li><?php _e('More comming soon.', 'rsscampaign'); ?></li>
+			  </ul>
+			</div>
+			
+			
 			
 			<input type="hidden" name="rsscsubmit" value="submit" />
 			<input type="hidden" name="action" value="update" />
@@ -163,23 +204,43 @@ function rss_campaign_admin_show() {
 			</p>
 				
 		</form>
+		<a href='http://www.pledgie.com/campaigns/10841'><img alt='Click here to lend your support to: Open Source by Sebastian and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/10841.png?skin_name=chrome' border='0' style="float:left; padding-right: 5px" /></a>
+		<?php printf(__('The Source Code is open at <a href="%s">github</a>', 'rsscampaign'), "http://github.com/sethiele/rss-campain"); ?> | 
+		<?php printf(__('Feature request/ bugreport  at <a href="%s">github</a>', 'rsscampaign'), 'http://github.com/sethiele/rss-campain/issues'); ?> <br>
+		<?php printf(__('<a href="%s">Project Page</a>', 'rsscampaign'), "http://sebastian.thiele.me/projekte/wordpress-plugin-campaign?piwik_campaign=Plugins&piwik_kwd=RSS-Campaign"); ?> |
+		<?php printf(__('<a href="%s">Author Page</a>', 'rsscampaign'), "http://sebastian.thiele.me/?piwik_campaign=Plugins&piwik_kwd=RSS-Campaign"); ?>
 
 <?php
 }
 
 function rssc_post_twitter_meta(){
 	global $post;
+	$rsscOptions = get_option('rssc');
 	if($post->post_status == "publish") {
+	  if($rsscOptions['rssc-bitly-user'] && $rsscOptions['rssc-bitly-api'])
+	  echo'
+	  <script type="text/javascript">
+      jQuery(document).ready(function(){
+        jQuery("#rssc-shorten").click(function(){
+ jQuery.getJSON("http://api.bit.ly/v3/shorten?login='.$rsscOptions['rssc-bitly-user'].'&apiKey='.$rsscOptions['rssc-bitly-api'].'&longUrl="+encodeURI("'.rssc_helper_buildParam(get_permalink(), "twitter").'")+"&format=json&callback=?", function(data){
+            if(data.status_txt == "OK"){
+              jQuery("#campaignURL").val(data.data.url);
+            }
+          });
+        });
+      });
+	  </script>
+	  ';
 		$twitterlink = "http://twitter.com/home?status=".urldecode($post->post_title." ".rssc_helper_buildParam(get_permalink(), "twitter"));
-		printf(__("Klick <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter."), $twitterlink);
+		printf(__("Click <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter.", "rsscampaign"), $twitterlink);
 		echo "<br>";
-		_e('Your Campain Link is:', 'rsscampaign'); echo "<br>";
-		echo rssc_helper_buildParam(get_permalink(), "twitter");
+		_e('Your Campain Link is:', 'rsscampaign'); if($rsscOptions['rssc-bitly-user'] && $rsscOptions['rssc-bitly-api']) echo" (<span id=\"rssc-shorten\">".__('Shorten this Link', 'rsscampaign')."</span>)"; echo "<br>";
+		echo '<input type="text" name="campaignURL" id="campaignURL" value="'.rssc_helper_buildParam(get_permalink(), "twitter").'" style="width:100%" />';
 	}
 	
 	// echo rssc_helper_buildParam(get_permalink(), "twitter");
 	else _e('Wait for Post publishing', 'rsscampaign');
-	// print_r($post);
+  // print_r($post);
 }
 
 // New Field in new-post.php
@@ -195,10 +256,10 @@ if($rsscOptions['rssc-twitter-enable']) add_action('admin_init', 'post_rssc_meta
 
 $plugindir = basename(dirname(__FILE__));
 load_plugin_textdomain( 'rsscampaign', 'wp-content/plugins/' . $plugindir.'/lang', false );
-if(is_admin() && ($_GET['page'] == 'rss-campaign')) {
+// if(is_admin() && ($_GET['page'] == 'rss-campaign')) {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('rssc', WP_CONTENT_URL .'/plugins/'. $plugindir. '/js/rssc.js',  array('jquery'));
 	wp_enqueue_style('rssc', WP_CONTENT_URL .'/plugins/'. $plugindir. '/css/rssc.css');
-}
+// }
 
 ?>

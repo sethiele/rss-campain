@@ -30,3 +30,9 @@ table {
 	text-align:right;
 	font-size:0.7em;
 }
+
+#rssc-shorten {
+	text-decoration:underline;
+	color:blue;
+	cursor:pointer;
+}
