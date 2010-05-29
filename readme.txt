@@ -2,8 +2,8 @@
 Contributors: sebat
 Tags: Piwik, Google Analytics, Google, Campaign, Bit.ly
 Requires at least: 2.0
-Tested up to: 2.9.2
-Stable tag: 1.2
+Tested up to: 3.0-dev
+Stable tag: 1.2.1
 Plugin Name: RSS Campaign
 Donate Link: http://pledgie.com/campaigns/10886
 
@@ -29,8 +29,19 @@ Twitter Campagns can shorten by Bit.ly
 4. Placeholder values
 5. Generated Twitter link and shorted URL
 
+== Frequently Asked Questions ==
+
+
+== Upgrade Notice ==
+= 1.2.1 =
+* Fix a Issue
 
 == Changelog ==
+= 1.2.1 =
+* Move Screenshots to own subdir
+* <b>Closed Issues:<b>
+* <a href="http://github.com/sethiele/rss-campain/issues/closed/#issue/2">02 Piwik-keyword wouldn't shorted</a>
+
 = 1.2 =
 * Adding some placeholder (PostID, PostTitle)
 * Adding Shortener Service (Bit.ly)

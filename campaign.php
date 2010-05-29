@@ -4,7 +4,7 @@ Plugin Name: Campaign
 Plugin URI: http://sebastian.thiele.me
 Description: This Plugin adds Campaign Infos to the RSS URL to tracking in Google Analytics or Piwik
 Author: Sebastian Thiele
-Version: 1.2
+Version: 1.2.1
 Author URI: http://sebastian.thiele.me
 */
 
@@ -22,16 +22,16 @@ function rssc_helper_buildParam($url, $source){
 	$ret .= $url;
 	if($attr && !$urlelement[query]) $ret .= "?";
 	elseif($attr)
-		$ret .= "&amp;";
+		$ret .= "&";
 	if($attr) {
 		$anzattr = count($attr);
 		foreach ($attr as $attribut){
 			$ret .= $attribut;
 			$i++;
-			if($i < $anzattr) $ret .= "&amp;";
+			if($i < $anzattr) $ret .= "&";
 		}
 	}
-	return $ret;
+	return urlencode($ret);
 }
 
 function rss_campaign_post_link($content){
@@ -115,7 +115,7 @@ function rss_campaign_admin_show() {
 				
 				<div id="rssc-example">
 					<h3 style=""><?php _e('Example URL', 'rsscampaign')?></h3>
-					RSS: <?php echo rssc_helper_buildParam(get_bloginfo('wpurl'), 'rss'); ?>
+					RSS: <?php echo urldecode(rssc_helper_buildParam(get_bloginfo('wpurl'), 'rss')); ?>
 				</div>
 				
 			</div>
@@ -159,7 +159,7 @@ function rss_campaign_admin_show() {
 				
 				<div id="rssc-example">
 					<h3 style=""><?php _e('Example URL', 'rsscampaign')?></h3>
-					Twitter: <?php echo rssc_helper_buildParam(get_bloginfo('wpurl'), 'twitter'); ?>
+					Twitter: <?php echo urldecode(rssc_helper_buildParam(get_bloginfo('wpurl'), 'twitter')); ?>
 				</div>
 				
 			</div>
@@ -217,12 +217,13 @@ function rssc_post_twitter_meta(){
 	global $post;
 	$rsscOptions = get_option('rssc');
 	if($post->post_status == "publish") {
+	  $rsscPostLink = rssc_helper_buildParam(get_permalink(), "twitter");
 	  if($rsscOptions['rssc-bitly-user'] && $rsscOptions['rssc-bitly-api'])
 	  echo'
 	  <script type="text/javascript">
       jQuery(document).ready(function(){
         jQuery("#rssc-shorten").click(function(){
- jQuery.getJSON("http://api.bit.ly/v3/shorten?login='.$rsscOptions['rssc-bitly-user'].'&apiKey='.$rsscOptions['rssc-bitly-api'].'&longUrl="+encodeURI("'.rssc_helper_buildParam(get_permalink(), "twitter").'")+"&format=json&callback=?", function(data){
+ jQuery.getJSON("http://api.bit.ly/v3/shorten?login='.$rsscOptions['rssc-bitly-user'].'&apiKey='.$rsscOptions['rssc-bitly-api'].'&longUrl='.$rsscPostLink.'&format=json&callback=?", function(data){
             if(data.status_txt == "OK"){
               jQuery("#campaignURL").val(data.data.url);
             }
@@ -231,11 +232,11 @@ function rssc_post_twitter_meta(){
       });
 	  </script>
 	  ';
-		$twitterlink = "http://twitter.com/home?status=".urldecode($post->post_title." ".rssc_helper_buildParam(get_permalink(), "twitter"));
+		$twitterlink = "http://twitter.com/home?status=".urlencode($post->post_title." ").$rsscPostLink;
 		printf(__("Click <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter.", "rsscampaign"), $twitterlink);
 		echo "<br>";
 		_e('Your Campain Link is:', 'rsscampaign'); if($rsscOptions['rssc-bitly-user'] && $rsscOptions['rssc-bitly-api']) echo" (<span id=\"rssc-shorten\">".__('Shorten this Link', 'rsscampaign')."</span>)"; echo "<br>";
-		echo '<input type="text" name="campaignURL" id="campaignURL" value="'.rssc_helper_buildParam(get_permalink(), "twitter").'" style="width:100%" />';
+		echo '<input type="text" name="campaignURL" id="campaignURL" value="'.urldecode($rsscPostLink).'" style="width:100%" />';
 	}
 	
 	// echo rssc_helper_buildParam(get_permalink(), "twitter");
