@@ -3,7 +3,7 @@ Contributors: sebat
 Tags: Piwik, Google Analytics, Google, Campaign, Bit.ly
 Requires at least: 2.0
 Tested up to: 3.0-dev
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 Plugin Name: RSS Campaign
 Donate Link: http://pledgie.com/campaigns/10886
 
@@ -33,10 +33,17 @@ Twitter Campagns can shorten by Bit.ly
 
 
 == Upgrade Notice ==
+= 1.2.2 =
+* Bugfixing URL to the Post is Fixed
+
 = 1.2.1 =
 * Fix a Issue
 
 == Changelog ==
+= 1.2.2 =
+* Bugfix: URL in the Feed is fixed
+* Backend Menue optimized
+
 = 1.2.1 =
 * Move Screenshots to own subdir
 * <b>Closed Issues:<b>

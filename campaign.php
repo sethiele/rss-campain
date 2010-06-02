@@ -4,10 +4,12 @@ Plugin Name: Campaign
 Plugin URI: http://sebastian.thiele.me
 Description: This Plugin adds Campaign Infos to the RSS URL to tracking in Google Analytics or Piwik
 Author: Sebastian Thiele
-Version: 1.2.1
+Version: 1.2.2
 Author URI: http://sebastian.thiele.me
 */
 
+
+// Build the URL
 function rssc_helper_buildParam($url, $source){
   global $post;
 	$urlelement = parse_url($url);
@@ -37,16 +39,18 @@ function rssc_helper_buildParam($url, $source){
 function rss_campaign_post_link($content){
   global $post;
 	if(is_feed()){
-		return rssc_helper_buildParam($content, "rss");
+		return str_replace("&", "&amp;", urldecode(rssc_helper_buildParam($content, "rss")));
 	} else {
 		return $content;
 	}
 }
+// END Build the URL
 
 function rss_campaign_admin() {
 	add_options_page('Campaign', 'Campaign', 9, 'rss-campaign', rss_campaign_admin_show);
 }
 
+// Admin Backend
 function rss_campaign_admin_show() {
 ?>
 	<div class="wrap">
@@ -212,7 +216,9 @@ function rss_campaign_admin_show() {
 
 <?php
 }
+// END Admin Backend
 
+// Area in new Posts
 function rssc_post_twitter_meta(){
 	global $post;
 	$rsscOptions = get_option('rssc');
@@ -223,7 +229,7 @@ function rssc_post_twitter_meta(){
 	  <script type="text/javascript">
       jQuery(document).ready(function(){
         jQuery("#rssc-shorten").click(function(){
- jQuery.getJSON("http://api.bit.ly/v3/shorten?login='.$rsscOptions['rssc-bitly-user'].'&apiKey='.$rsscOptions['rssc-bitly-api'].'&longUrl='.$rsscPostLink.'&format=json&callback=?", function(data){
+          jQuery.getJSON("http://api.bit.ly/v3/shorten?login='.$rsscOptions['rssc-bitly-user'].'&apiKey='.$rsscOptions['rssc-bitly-api'].'&longUrl='.$rsscPostLink.'&format=json&callback=?", function(data){
             if(data.status_txt == "OK"){
               jQuery("#campaignURL").val(data.data.url);
             }
@@ -238,11 +244,9 @@ function rssc_post_twitter_meta(){
 		_e('Your Campain Link is:', 'rsscampaign'); if($rsscOptions['rssc-bitly-user'] && $rsscOptions['rssc-bitly-api']) echo" (<span id=\"rssc-shorten\">".__('Shorten this Link', 'rsscampaign')."</span>)"; echo "<br>";
 		echo '<input type="text" name="campaignURL" id="campaignURL" value="'.urldecode($rsscPostLink).'" style="width:100%" />';
 	}
-	
-	// echo rssc_helper_buildParam(get_permalink(), "twitter");
 	else _e('Wait for Post publishing', 'rsscampaign');
-  // print_r($post);
 }
+// END Area in new Posts
 
 // New Field in new-post.php
 function post_rssc_meta(){
@@ -257,10 +261,9 @@ if($rsscOptions['rssc-twitter-enable']) add_action('admin_init', 'post_rssc_meta
 
 $plugindir = basename(dirname(__FILE__));
 load_plugin_textdomain( 'rsscampaign', 'wp-content/plugins/' . $plugindir.'/lang', false );
-// if(is_admin() && ($_GET['page'] == 'rss-campaign')) {
+ if(is_admin() && (($_GET['page'] == 'rss-campaign') || substr(basename($_SERVER['REQUEST_URI']), 0, 8) == 'post.php') ) {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('rssc', WP_CONTENT_URL .'/plugins/'. $plugindir. '/js/rssc.js',  array('jquery'));
 	wp_enqueue_style('rssc', WP_CONTENT_URL .'/plugins/'. $plugindir. '/css/rssc.css');
-// }
-
+ }
 ?>

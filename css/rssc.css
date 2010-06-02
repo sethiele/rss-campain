@@ -11,6 +11,7 @@ table {
 	border-right: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
 	padding:5px;
+	display: none;
 }
 
 .rssc-head{
