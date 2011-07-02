@@ -1,0 +1,198 @@
+# Translation of the WordPress plugin   by .
+# Copyright (C) 2010
+# This file is distributed under the same license as the  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rsscampaign\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/rss-campaign\n"
+"POT-Creation-Date: 2011-02-10 11:41:04+00:00\n"
+"PO-Revision-Date: 2011-02-10 12:46+0100\n"
+"Last-Translator: Sebsatian <Sebastian.Thiele@affinitas.de>\n"
+"Language-Team: Sebastian Thiele <translate.20.sebat@xoxy.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: campaign.php:76
+msgid "Campaign Option Page"
+msgstr "Campaign Option Page"
+
+#: campaign.php:115
+msgid "Options for RSS"
+msgstr "Options for RSS"
+
+#: campaign.php:117
+#: campaign.php:161
+#: campaign.php:208
+msgid "Piwik Options"
+msgstr "Piwik Options"
+
+#: campaign.php:120
+#: campaign.php:140
+#: campaign.php:164
+#: campaign.php:184
+#: campaign.php:211
+#: campaign.php:231
+msgid "Campaign Name"
+msgstr "Campaign Name"
+
+#: campaign.php:124
+#: campaign.php:168
+#: campaign.php:215
+msgid "Keyword"
+msgstr "Keyword"
+
+#: campaign.php:129
+#: campaign.php:173
+#: campaign.php:220
+msgid "Google Analytics Options"
+msgstr "Google Analytics Options"
+
+#: campaign.php:132
+#: campaign.php:176
+#: campaign.php:223
+msgid "Campaign Source"
+msgstr "Campaign Source"
+
+#: campaign.php:133
+#: campaign.php:177
+#: campaign.php:224
+msgid "referrer: google, citysearch, newsletter4"
+msgstr "referrer: google, citysearch, newsletter4"
+
+#: campaign.php:136
+#: campaign.php:180
+#: campaign.php:227
+msgid "Campaign Medium"
+msgstr "Campaign Medium"
+
+#: campaign.php:137
+#: campaign.php:181
+#: campaign.php:228
+msgid "marketing medium: cpc, banner, email"
+msgstr "marketing medium: cpc, banner, email"
+
+#: campaign.php:141
+#: campaign.php:185
+#: campaign.php:232
+msgid "product, promo code, or slogan"
+msgstr "product, promo code, or slogan"
+
+#: campaign.php:146
+#: campaign.php:190
+msgid "Example URL"
+msgstr "Example URL"
+
+#: campaign.php:154
+msgid "Options for Twitter"
+msgstr "Options for Twitter"
+
+#: campaign.php:158
+msgid "Enable Campaign for Twitter"
+msgstr "Enable Campaign for Twitter"
+
+#: campaign.php:158
+msgid "No auto publishing"
+msgstr "No auto publishing"
+
+#: campaign.php:198
+msgid "Options for Open Graph Protocol"
+msgstr "Options for Open Graph Protocol"
+
+#: campaign.php:201
+msgid "What is the Open Graph Protocol?"
+msgstr "What is the Open Graph Protocol?"
+
+#: campaign.php:205
+msgid "Enable Campaign for Open Graph Protocol"
+msgstr "Enable Campaign for Open Graph Protocol"
+
+#: campaign.php:205
+msgid "This will add a QR-Code Image next to your liked Posts instead of a random image. This Image came from Googles Chart API."
+msgstr "This will add a QR-Code Image next to your liked Posts instead of a random image. This Image came from Googles Chart API."
+
+#: campaign.php:237
+msgid "Example QR"
+msgstr "Example QR"
+
+#: campaign.php:246
+msgid "URL shortener"
+msgstr "URL shortener"
+
+#: campaign.php:248
+msgid "Up to now only Bit.ly is supportet."
+msgstr "Up to now only Bit.ly is supportet."
+
+#: campaign.php:252
+msgid "Bit.ly Username"
+msgstr "Bit.ly Username"
+
+#: campaign.php:256
+msgid "Bit.ly ApiKey"
+msgstr "Bit.ly ApiKey"
+
+#: campaign.php:264
+msgid "Placeholder"
+msgstr "Placeholder"
+
+#: campaign.php:266
+msgid "The following placeholder can be added to every value and will replaced automatically."
+msgstr "The following placeholder can be added to every value and will replaced automatically."
+
+#: campaign.php:268
+msgid "Adds the post id to the campaign"
+msgstr "Adds the post id to the campaign"
+
+#: campaign.php:269
+msgid "Adds the posttitle to the campaign"
+msgstr "Adds the posttitle to the campaign"
+
+#: campaign.php:270
+msgid "More comming soon."
+msgstr "More comming soon."
+
+#: campaign.php:280
+msgid "Save"
+msgstr "Save"
+
+#: campaign.php:285
+msgid "The Source Code is open at <a href=\"%s\">github</a>"
+msgstr "The Source Code is open at <a href=\"%s\">github</a>"
+
+#: campaign.php:286
+msgid "Feature request/ bugreport  at <a href=\"%s\">github</a>"
+msgstr "Feature request/ bugreport  at <a href=\"%s\">github</a>"
+
+#: campaign.php:287
+msgid "<a href=\"%s\">Project Page</a>"
+msgstr "<a href=\"%s\">Project Page</a>"
+
+#: campaign.php:288
+msgid "<a href=\"%s\">Author Page</a>"
+msgstr "<a href=\"%s\">Developer Page</a>"
+
+#: campaign.php:317
+msgid "Click <a href=\"%s\" target=\"_blank\">here</a> to publish your post at twitter."
+msgstr "Klick <a href=\"%s\" target=\"_blank\">here</a> to publish your post at Twitter."
+
+#: campaign.php:319
+msgid "Your Campain Link is:"
+msgstr "Your Campain Link is:"
+
+#: campaign.php:319
+msgid "Shorten this Link"
+msgstr "Shorten this Link"
+
+#: campaign.php:322
+msgid "Wait for Post publishing"
+msgstr "Wait for Post publishing"
+
+#: campaign.php:328
+msgid "Twitter with Campaign"
+msgstr "Twitter with Campaign"
+

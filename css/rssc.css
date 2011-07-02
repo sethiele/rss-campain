@@ -1,0 +1,39 @@
+table {
+	width: 100%;
+}
+
+.rssc-name{
+	width: 25%;
+}
+
+.rssc-optionen{
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	padding:5px;
+	display: none;
+}
+
+.rssc-head{
+	color:#464646;
+	cursor:pointer;
+	background:url("../../../../wp-admin/images/gray-grad.png") repeat-x scroll left top #DFDFDF;
+	text-shadow:0 1px 0 #FFFFFF;
+	border: 1px solid #cccccc;
+	-moz-border-radius:6px 6px 0 0;
+	padding:5px;
+	margin:0px;
+}
+
+.rssc-drop{
+	width: 100px;
+	float:right;
+	text-align:right;
+	font-size:0.7em;
+}
+
+#rssc-shorten {
+	text-decoration:underline;
+	color:blue;
+	cursor:pointer;
+}

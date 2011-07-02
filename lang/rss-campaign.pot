@@ -1,0 +1,192 @@
+# Copyright (C) 2010 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/rss-campaign\n"
+"POT-Creation-Date: 2011-06-20 09:35:26+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: campaign.php:62
+msgid "read more ..."
+msgstr ""
+
+#: campaign.php:87
+msgid "Campaign Option Page"
+msgstr ""
+
+#: campaign.php:127
+msgid "Options for RSS"
+msgstr ""
+
+#: campaign.php:129 campaign.php:178 campaign.php:225
+msgid "Piwik Options"
+msgstr ""
+
+#: campaign.php:132 campaign.php:152 campaign.php:181 campaign.php:201
+#: campaign.php:228 campaign.php:248
+msgid "Campaign Name"
+msgstr ""
+
+#: campaign.php:136 campaign.php:185 campaign.php:232
+msgid "Keyword"
+msgstr ""
+
+#: campaign.php:141 campaign.php:190 campaign.php:237
+msgid "Google Analytics Options"
+msgstr ""
+
+#: campaign.php:144 campaign.php:193 campaign.php:240
+msgid "Campaign Source"
+msgstr ""
+
+#: campaign.php:145 campaign.php:194 campaign.php:241
+msgid "referrer: google, citysearch, newsletter4"
+msgstr ""
+
+#: campaign.php:148 campaign.php:197 campaign.php:244
+msgid "Campaign Medium"
+msgstr ""
+
+#: campaign.php:149 campaign.php:198 campaign.php:245
+msgid "marketing medium: cpc, banner, email"
+msgstr ""
+
+#: campaign.php:153 campaign.php:202 campaign.php:249
+msgid "product, promo code, or slogan"
+msgstr ""
+
+#: campaign.php:158
+msgid "Change only the read more link in the RSS-Feed"
+msgstr ""
+
+#: campaign.php:159
+msgid ""
+"This is a usefull option if you use google Feedburner or so. This Service "
+"add allready a tracking Code to the title link. When you add here a tracking "
+"code to you have two tracking codes for one link. With this option you only "
+"add a tracking code to the more link not to the title link."
+msgstr ""
+
+#: campaign.php:163 campaign.php:207
+msgid "Example URL"
+msgstr ""
+
+#: campaign.php:171
+msgid "Options for Twitter"
+msgstr ""
+
+#: campaign.php:175
+msgid "Enable Campaign for Twitter"
+msgstr ""
+
+#: campaign.php:175
+msgid "No auto publishing"
+msgstr ""
+
+#: campaign.php:215
+msgid "Options for Open Graph Protocol"
+msgstr ""
+
+#: campaign.php:218
+msgid "What is the Open Graph Protocol?"
+msgstr ""
+
+#: campaign.php:222
+msgid "Enable Campaign for Open Graph Protocol"
+msgstr ""
+
+#: campaign.php:222
+msgid ""
+"This will add a QR-Code Image next to your liked Posts instead of a random "
+"image. This Image came from Googles Chart API."
+msgstr ""
+
+#: campaign.php:254
+msgid "Example QR"
+msgstr ""
+
+#: campaign.php:263
+msgid "URL shortener"
+msgstr ""
+
+#: campaign.php:265
+msgid "Up to now only Bit.ly is supportet."
+msgstr ""
+
+#: campaign.php:269
+msgid "Bit.ly Username"
+msgstr ""
+
+#: campaign.php:273
+msgid "Bit.ly ApiKey"
+msgstr ""
+
+#: campaign.php:281
+msgid "Placeholder"
+msgstr ""
+
+#: campaign.php:283
+msgid ""
+"The following placeholder can be added to every value and will replaced "
+"automatically."
+msgstr ""
+
+#: campaign.php:285
+msgid "Adds the post id to the campaign"
+msgstr ""
+
+#: campaign.php:286
+msgid "Adds the posttitle to the campaign"
+msgstr ""
+
+#: campaign.php:287
+msgid "More comming soon."
+msgstr ""
+
+#: campaign.php:297
+msgid "Save"
+msgstr ""
+
+#: campaign.php:302
+msgid "The Source Code is open at <a href=\"%s\">github</a>"
+msgstr ""
+
+#: campaign.php:303
+msgid "Feature request/ bugreport  at <a href=\"%s\">github</a>"
+msgstr ""
+
+#: campaign.php:304
+msgid "<a href=\"%s\">Project Page</a>"
+msgstr ""
+
+#: campaign.php:305
+msgid "<a href=\"%s\">Author Page</a>"
+msgstr ""
+
+#: campaign.php:334
+msgid ""
+"Click <a href=\"%s\" target=\"_blank\">here</a> to publish your post at "
+"twitter."
+msgstr ""
+
+#: campaign.php:336
+msgid "Your Campain Link is:"
+msgstr ""
+
+#: campaign.php:336
+msgid "Shorten this Link"
+msgstr ""
+
+#: campaign.php:339
+msgid "Wait for Post publishing"
+msgstr ""
+
+#: campaign.php:345
+msgid "Twitter with Campaign"
+msgstr ""
