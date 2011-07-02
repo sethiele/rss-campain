@@ -4,7 +4,11 @@ Plugin Name: Campaign
 Plugin URI: http://sebastian.thiele.me
 Description: This Plugin adds Campaign Infos to the RSS URL to tracking in Google Analytics or Piwik
 Author: Sebastian Thiele
+<<<<<<< HEAD
 Version: 1.4
+=======
+Version: 1.2.2
+>>>>>>> 7a9ab105a57d067f3bf3662ab847e03ea5ae8c75
 Author URI: http://sebastian.thiele.me
 */
 
@@ -158,7 +162,6 @@ function rss_campaign_admin_show() {
 						<td class="rssc-value"><input type="text" name="rssc-rss-utm_campaign" value="<?php echo urldecode($rsscOptions['rssc-rss-utm_campaign']);?>" />  (<?php _e('product, promo code, or slogan', 'rsscampaign')?>)</td>
 					</tr>
 				</table>
-                
                 <p>
                     <input type="checkbox" name="rssc-changemore" value="checked" <?php print $rsscOptions['rssc-changemore']; ?>><b><?php _e('Change only the read more link in the RSS-Feed', 'rsscampaign')?></b><br />
                     <small><?php _e('This is a usefull option if you use google Feedburner or so. This Service add allready a tracking Code to the title link. When you add here a tracking code to you have two tracking codes for one link. With this option you only add a tracking code to the more link not to the title link.', 'rsscampaign')?></small>
@@ -263,7 +266,6 @@ function rss_campaign_admin_show() {
 			</div>
 			
 			<br>
-            
 			
 			<h3 class="rssc-head" id="rssc-head-shorter"><?php _e('URL shortener', 'rsscampaign')?></h3>
 			<div class="rssc-optionen" id="rssc-shorter-optionen">

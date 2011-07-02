@@ -1,5 +1,6 @@
 === Plugin Name ===
 Contributors: sebat
+<<<<<<< HEAD
 Tags: Piwik, Google Analytics, Google, Campaign, Bit.ly, Open Graph, Facebook
 Requires at least: 2.0
 Tested up to: 3.1.3
@@ -9,12 +10,26 @@ Donate Link: http://pledgie.com/campaigns/10886
 
 
 This Plugin adds Campaign Infos to the RSS URL and a option for a twitterable URL to tracking in Google Analytics or Piwik And now a Option to add a QR Code to Facebook
+=======
+Tags: Piwik, Google Analytics, Google, Campaign, Bit.ly
+Requires at least: 2.0
+Tested up to: 3.0-dev
+Stable tag: 1.2.2
+Plugin Name: RSS Campaign
+Donate Link: http://pledgie.com/campaigns/10886
+
+
+This Plugin adds Campaign Infos to the RSS URL an a option for a twitterable URL to tracking in Google Analytics or Piwik
+>>>>>>> 7a9ab105a57d067f3bf3662ab847e03ea5ae8c75
 
 == Description ==
 
 This Plugin adds the option to track your RSS reader or Twitter clicks by using Campaigns. You can use Google Analytics and/or Piwik.
 Twitter Campagns can shorten by Bit.ly
+<<<<<<< HEAD
 And now you can add a QR-Code to Facebook liked Pages.
+=======
+>>>>>>> 7a9ab105a57d067f3bf3662ab847e03ea5ae8c75
 
 == Installation ==
 
@@ -29,6 +44,7 @@ And now you can add a QR-Code to Facebook liked Pages.
 3. Shortener Settings
 4. Placeholder values
 5. Generated Twitter link and shorted URL
+<<<<<<< HEAD
 5. Show a QR code for mobile linking to shared Articles at Facebook
 
 == Frequently Asked Questions ==
@@ -58,6 +74,13 @@ User with readable devices like a smart phone can open the url direct in there d
 * Adding a Flattr Button to sopport the Project.
 * Adding a new Screenshot that show the Facebook intigration
 
+=======
+
+== Frequently Asked Questions ==
+
+
+== Upgrade Notice ==
+>>>>>>> 7a9ab105a57d067f3bf3662ab847e03ea5ae8c75
 = 1.2.2 =
 * Bugfixing URL to the Post is Fixed
 
@@ -65,6 +88,7 @@ User with readable devices like a smart phone can open the url direct in there d
 * Fix a Issue
 
 == Changelog ==
+<<<<<<< HEAD
 = 1.4 =
 * Adding the option to chouse whater to show the tracking code in all RSS Links (title and more link) or only for the more link.
 
@@ -73,6 +97,8 @@ User with readable devices like a smart phone can open the url direct in there d
 * Adding a Flattr Button to sopport the Project.
 * Adding a new Screenshot that show the Facebook intigration
 
+=======
+>>>>>>> 7a9ab105a57d067f3bf3662ab847e03ea5ae8c75
 = 1.2.2 =
 * Bugfix: URL in the Feed is fixed
 * Backend Menue optimized
