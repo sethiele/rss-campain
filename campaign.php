@@ -4,11 +4,7 @@ Plugin Name: Campaign
 Plugin URI: http://sebastian.thiele.me
 Description: This Plugin adds Campaign Infos to the RSS URL to tracking in Google Analytics or Piwik
 Author: Sebastian Thiele
-<<<<<<< HEAD
 Version: 1.4
-=======
-Version: 1.2.2
->>>>>>> 7a9ab105a57d067f3bf3662ab847e03ea5ae8c75
 Author URI: http://sebastian.thiele.me
 */
 
@@ -69,7 +65,7 @@ function rss_campaign_more($more) {
         return $more;
 }
 
-function rss_campaign_header_mod($content){
+function rss_campaign_moreer_mod($content){
     global $posts;
     if(rssc_helper_is_enable('opengraph'))
     {
